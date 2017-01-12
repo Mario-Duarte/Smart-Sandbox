@@ -1,8 +1,6 @@
 # Smart-Sandbox
 Smart way of organizing your sandbox/root folder with dynamic search capabilities so no matter how big or how small your sandbox/root folder is you can easily find your projects on any device.
 
-![preview] (https://www.dropbox.com/s/gfrshcwldr6z5ui/smartsandbox.png?dl=0)
-
 ## About
 This came to mind when i realized how ofted i would forget the name of the old folders on my sandbox, has this is a folder where i just mess arround or create prototypes, so I wanted a easy way to display all folders in my sandbox enviroment by alphabetical olrder and a dynamic search.
 
