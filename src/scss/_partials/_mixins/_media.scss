@@ -1,0 +1,10 @@
+@mixin media($media) {
+
+	@if $media == 'smallMobile' { @media screen and (max-width: $smallMobileMax) { @content; } }
+	@if $media == 'mobile' { @media screen and (max-width: $mobileMax) { @content; } }
+	@if $media == 'mobileUpwards' { @media screen and (min-width: $mobileMin) { @content; } }
+	@if $media == 'tablet' { @media screen and (max-width: $tabletMax) { @content; } }
+	@if $media == 'tabletUpwards' { @media screen and (min-width: $tabletMin) { @content; } }
+	@if $media == 'laptopUpwards' { @media screen and (min-width: $laptopMin) { @content; } }
+
+}

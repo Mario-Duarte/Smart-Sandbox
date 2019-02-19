@@ -1,0 +1,46 @@
+// ===============
+// Colors and Gradients
+// ===============
+
+$gradientFromLight : rgba(116, 185, 255,1.0);
+$solidFromLight: #74b9ff;
+$gradientFromDark : rgba(250, 177, 160,1.0);
+$solidFromDark: #fab1a0;
+$gradientToLight : rgba(223, 245, 247, 1);
+$solidToLight : #dff5f7;
+$gradientToDark : rgba(116, 185, 255,1.0);
+$solidToDark : #74b9ff;
+
+$bodyLight : #f9f9f9;
+$bodyDark : #333333;
+
+$black : #000000;
+$asphalt : #212121;
+$choal : #333333;
+$charcoal : #555555;
+$grey : #999999;
+$lightGrey : #dddddd;
+$vapor : #eeeeee;
+$clouds : #f8f8f8;
+$white : #ffffff;
+
+$main-light : #63cdda;
+$main-dark : #63cdda;
+$secondary-light : #ff7675;
+$secondary-dark : #ff7675;
+
+$love : #e74c3c;
+$footerCopyLight : #999999;
+
+// ===============
+// Sizes and Breakpoints
+// ===============
+
+$maxWidth : 960px;
+
+$smallMobileMax: 424px;
+$mobileMin: 425px;
+$mobileMax: 767px;
+$tabletMin: 768px;
+$tabletMax: 960px;
+$laptopMin: 961px;
