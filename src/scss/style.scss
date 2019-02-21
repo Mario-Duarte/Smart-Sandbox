@@ -94,10 +94,15 @@ a:hover , a:focus {
 		display: inline-block;
 		float: left;
 		list-style: none;
-		margin: 5px;
-		min-width: 140px;
+		margin: 5px 2.5%;
 		position: relative;
 		text-align: center;
+		width: 45%;
+		@include media('mobileUpwards') {
+			margin: 5px;
+			min-width: 140px;
+			width: auto;
+		}
 		a {
 			background: $vapor;
 			border-radius: 5px;
@@ -115,7 +120,7 @@ a:hover , a:focus {
 				color: $charcoal;
 				.folder-icon {
 					path {
-						fill: lighten($main-light, 20%);
+						fill: $secondary-light;
 					}
 				}
 			}
@@ -192,51 +197,10 @@ footer {
 		width: 100%;
 		p {
 			color: $grey;
-			font-size: 10px;
+			font-size: 14px;
 			span {
 				color: $secondary-light;
 			}
 		}
 	}
-}
-
-@media all and (min-width: 320px) and (max-width: 424px) {
-
-		#list .single {
-				margin: 5px 0;
-				width: 100%;
-		}
-
-		.search-wrapper {
-				text-align: center;
-		}
-
-		#search {
-				width: 100%;
-		}
-
-}
-
-@media all and (min-width: 425px) and (max-width: 767px) {
-
-		#list .single {
-				min-width: calc( 50% - 13px );
-		}
-
-		#search {
-				width: 80%;
-		}
-
-		.search-wrapper {
-				text-align: center;
-		}
-
-}
-
-@media all and (min-width: 768px) and (max-width: 960px) {
-
-	#list .single {
-			min-width: calc( 33.333333% - 13px );
-	}
-
 }

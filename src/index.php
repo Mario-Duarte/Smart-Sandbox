@@ -32,7 +32,9 @@ date_default_timezone_set($timeZone);
 		<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="light">
+
+	<div class="theme"></div>
 
 	<div class="header">
 			<div class="inner">
@@ -59,6 +61,7 @@ date_default_timezone_set($timeZone);
 	<footer>
 		<div class="inner">
 			<p>&copy; <?php echo date("Y"); ?>, created with <span>&hearts;</span> by <a href="http://marioduarte.co.uk" target="_blank">Mario Duarte</a> to the dev comunity.</p>
+			<p><a href="" target="_blank"></a><p>
 		</div>
 	</footer>
 
