@@ -22,6 +22,7 @@ html, body {
 	font-family: helvetica, arial, sans-serif;
 	margin: 0;
 	padding: 0;
+	transition: all 0.4s ease-in-out;
 }
 
 a, p a {
@@ -33,6 +34,35 @@ a, p a {
 
 a:hover , a:focus {
 	color: $secondary-light;
+}
+
+.theme {
+	background-color: #212121;
+	border-radius: 50%;
+	cursor: pointer;
+	height: 30px;
+	padding: 5px;
+	position: absolute;
+	right: 20px;
+	text-align: center;
+	top: 20px;
+	transition: background 0.2s ease-in-out;
+	width: 30px;
+	z-index: 2;
+	svg {
+		height: auto;
+		width: 20px;
+		#bulb {
+			fill: #f5cd79;
+			opacity: 1;
+			transition: all 0.4s ease-in-out;
+		}
+		#light {
+			fill: #f5cd79;
+			opacity: 1;
+			transition: all 0.4s ease-in-out;
+		}
+	}
 }
 
 .header {
@@ -203,4 +233,80 @@ footer {
 			}
 		}
 	}
+}
+
+body.dark {
+	background-color: $bodyDark;
+
+	a, p a {
+		color: $main-dark;
+		&:hover {
+			color: $secondary-dark;
+		}
+	}
+
+	.theme {
+		background-color: #eeeeee;
+		svg {
+			height: auto;
+			width: 20px;
+			#bulb {
+				fill: #212121;
+				opacity: 0.8;
+			}
+			#light {
+				opacity: 0;
+			}
+		}
+	}
+
+	.header {
+		@extend .hero-gradient-dark;
+		.inner {
+			background-color: $bodyDark;
+			color: $vapor;
+		}
+	}
+
+	.search-wrapper {
+		@extend .hero-gradient-dark;
+	}
+
+	.list {
+		.sort {
+			color: $vapor;
+		}
+	}
+
+	#list {
+		.single {
+			a {
+				background: $charcoal;
+				color: $lightGrey;
+				&:hover,
+				&:focus {
+					color: $grey;
+					.folder-icon {
+						path {
+							fill: $secondary-dark;
+						}
+					}
+				}
+				&:visited {
+					background: transparent;
+					color: $grey;
+				}
+				.folder-icon {
+					path {
+						fill: $main-dark;
+					}
+				}
+			}
+		}
+		.row-divider {
+			border-bottom: 1px solid $charcoal;
+			color: $charcoal;
+		}
+	}
+
 }

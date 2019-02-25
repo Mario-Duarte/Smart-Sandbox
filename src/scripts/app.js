@@ -1,5 +1,34 @@
 var folderIcon = "<svg class='folder-icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='48px' height='48px'><path d='M20,6h-8l-1.414-1.414C10.211,4.211,9.702,4,9.172,4H4C2.9,4,2,4.9,2,6v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V8 C22,6.9,21.1,6,20,6z'/></svg>";
 
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function checkCookie() {
+  var theme = getCookie("theme");
+  if (theme === "") {
+    setCookie("theme", "light", 30);
+  }
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
 orderByName();
 
 // On every key press while writing on the search field, it performs a new search and updates
@@ -106,3 +135,18 @@ function searchProjects() {
 		}
 
 }
+
+function toggleTheme() {
+	if (document.body.classList.contains('light')) {
+		document.body.classList.remove('light');
+		document.body.classList.add('dark');
+		setCookie("theme", "dark", 30);
+	} else {
+		document.body.classList.remove('dark');
+		document.body.classList.add('light');
+		setCookie("theme", "light", 30);
+	}
+}
+
+checkCookie();
+document.body.classList.add(getCookie("theme"));
