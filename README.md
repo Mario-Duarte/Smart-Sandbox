@@ -6,6 +6,8 @@ This came to mind when I realized how often I would just forget the name or simp
 
 So I created an easy way to display all folders in my sandbox environment with search capabilities. Best of all is really small at only 14kb!
 
+![smartsandbox demo](https://github.com/Mario-Duarte/Smart-Sandbox/blob/master/smartsandbox-demo.gif?raw=true)
+
 ## New Features on 2.0
 - Light and dark theme
 - Faster and better search
