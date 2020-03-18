@@ -36,7 +36,6 @@ const dir = {
 
 // Autoprefixer options
 const optAutoprefixer = {
-	browsers: ['last 3 version'],
 	remove: false,
 	cascade: false
 }

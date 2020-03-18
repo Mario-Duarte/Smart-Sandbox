@@ -1,7 +1,9 @@
+.history
 node_modules
 src/css
 src/js
 !src
+.DS_Store
 
 
 1-folder-0
