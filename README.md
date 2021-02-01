@@ -1,18 +1,23 @@
 # Smart-Sandbox
+# V3 is here! 
 Smart way of organizing your sandbox/root folder with dynamic search capabilities so no matter how big or how small your sandbox/root folder gets, you can easily find your projects.
 
 ## About
-This came to mind when I realized how often I would just forget the name or simply had to many folders on my sandbox environment, this is a local site where i just mess around or creating prototypes and ideas.
+This came to mind when I realized how often I would just forget the name or simply had to many folders on my sandbox environment, this is a local site where i just mess around for creating quick prototypes and ideas.
 
-So I created an easy way to display all folders in my sandbox environment with search capabilities. Best of all is really small at only 14kb!
+So I created an easy way to display all folders in my sandbox environment with search capabilities.
 
-![smartsandbox demo](https://github.com/Mario-Duarte/Smart-Sandbox/blob/master/smartsandbox-demo.gif?raw=true)
+This has proven a very useful "tool" to have has the years went by for the young developers I have mentored, providing them with an easy and quick way to jump strait into coding while keeping things organized.
 
-## New Features on 2.0
-- Light and dark theme
-- Faster and better search
-- Alphabetical and date sorting order
-- New icons and better responsiveness
+Now I have also released a sandbox environment for Docker, where you can use this. Find out more in this [repo](https://github.com/Mario-Duarte/docker-smart-sandbox).
+
+![smartsandbox demo](https://github.com/Mario-Duarte/Smart-Sandbox/blob/master/smartsandbox-demo_v3.gif?raw=true)
+
+
+## New Features on 3.0
+- New modern design
+- Better search
+- Improved theme detection and selection
 - Bug fixes
 
 ## installation
@@ -26,11 +31,10 @@ Set up a domain on you local machine as dev.sandbox.com and place this index.php
 - PHP (with read access to the folders)
 - JavaScript
 - modern browser (chrome, firefox, safari or edge)
-- IE9+
+
+If you require legacy browser support check out an older version of this tool [here (<v2.1)](https://github.com/Mario-Duarte/Smart-Sandbox/releases).
 
 That's it really, all the magic is done with php and javascript.
-
-
 
 __Found a bug? Want to help to make this tool better?__
 Contact me via [Twitter](https://twitter.com/MDesignsuk)

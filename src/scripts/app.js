@@ -8,10 +8,7 @@ function setCookie(cname, cvalue, exdays) {
 }
 
 function checkCookie() {
-	var theme = getCookie("theme");
-	if (theme === "") {
-		setCookie("theme", "light", 30);
-	}
+	return getCookie("theme");
 }
 
 function getCookie(cname) {
@@ -29,24 +26,29 @@ function getCookie(cname) {
 	return "";
 }
 
-orderByName();
-
-// On every key press while writing on the search field, it performs a new search and updates
-// the displayed list without the alphabetical dividers
-document.getElementById('search').onkeypress = function (e) {
-searchProjects();
-};
-
 //function to order list by name
-function orderByName() {
-	list.sort(compare);
+function orderByName(direction='ASC') {
+
+	if ( direction === 'ASC' ) {
+		list.sort(ascending);
+	} else {
+		list.sort(descending);
+	}
 
 	// sorting function for the object created above
-	function compare(a,b) {
+	function ascending(a,b) {
 		if (a.name < b.name)
 			return -1;
 		if (a.name > b.name)
 			return 1;
+		return 0;
+	}
+
+	function descending(a,b) {
+		if (a.name < b.name)
+			return 1;
+		if (a.name > b.name)
+			return -1;
 		return 0;
 	}
 
@@ -73,15 +75,28 @@ function orderByName() {
 }
 
 // Function to order by date
-function orderByDate() {
-	list.sort(compare);
+function orderByDate(direction='ASC') {
 
-	// sorting function for the object created above
-	function compare(a,b) {
+	if ( direction === 'ASC' ) {
+		list.sort(ascending);
+	} else {
+		list.sort(descending);
+	}
+
+	// sorting ascending function
+	function ascending(a,b) {
 		if (a.date > b.date)
 			return -1;
 		if (a.date < b.date)
 			return 1;
+		return 0;
+	}
+
+	function descending(a,b) {
+		if (a.date > b.date)
+			return 1;
+		if (a.date < b.date)
+			return -1;
 		return 0;
 	}
 
@@ -131,22 +146,67 @@ function searchProjects() {
 				}
 				listWrapper.innerHTML += "<li class='single " + listSubString + "-row'><a href='" + list[i]["name"] + "'>" + folderIcon + "</br>" + list[i]["name"].replace(/-/g, " ").replace(/_/g, " ") + "</a></li>";
 			}
-			arraySub.push(listSubString);
+			arraySub = [...arraySub, ...listSubString];
 		}
 
 }
 
-function toggleTheme() {
-	if (document.body.classList.contains('light')) {
-		document.body.classList.remove('light');
-		document.body.classList.add('dark');
-		setCookie("theme", "dark", 30);
-	} else {
-		document.body.classList.remove('dark');
-		document.body.classList.add('light');
-		setCookie("theme", "light", 30);
+// sets the theme
+function setTheme(theme, elm, cookie = false) {
+	console.log(elm);
+	if (elm) {
+		elm.setAttribute('data-theme', theme);
+		if ( cookie ) { setCookie("theme", theme, 30) }
 	}
 }
 
-checkCookie();
-document.body.classList.add(getCookie("theme"));
+// On theme toggle switch the theme and save the choice in a cookie
+function toggleTheme() {
+	const html = document.getElementsByTagName('html')[0];
+	const currentTheme = html.getAttribute('data-theme');
+	switch (currentTheme) {
+		case "light":
+			setTheme("dark", html, true);
+			break;
+		default:
+			setTheme("light", html, true);
+			break;
+	}
+}
+
+window.addEventListener('load', (event) => {
+	const themeCookie = checkCookie();
+	const html = document.getElementsByTagName('html')[0];
+
+	//check if cookie is set with preferred theme
+	if ( themeCookie ) {
+		setTheme(themeCookie, html, false);
+	} else {
+		// Check to see if Media-Queries are supported
+		if (window.matchMedia) {
+			console.log('media query supported');
+			// Check if the dark-mode Media-Query matches
+			if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+				setTheme("dark", html, false);
+			} else {
+				setTheme("light", html, false);
+			}
+		}
+	}
+
+	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+		const newColorScheme = e.matches ? "dark" : "light";
+		setTheme(newColorScheme, html, false);
+		setCookie("theme", '', 0)
+	});
+
+	// Orders the folders list by name
+	orderByName();
+
+	// On every key press while writing on the search field, it performs a new search and updates
+	// the displayed list without the alphabetical dividers
+	document.getElementById('search').onkeypress = function (e) {
+	searchProjects();
+	};
+
+});

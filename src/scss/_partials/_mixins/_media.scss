@@ -6,5 +6,6 @@
 	@if $media == 'tablet' { @media screen and (max-width: $tabletMax) { @content; } }
 	@if $media == 'tabletUpwards' { @media screen and (min-width: $tabletMin) { @content; } }
 	@if $media == 'laptopUpwards' { @media screen and (min-width: $laptopMin) { @content; } }
-
+	@if $media == 'light-theme' {@media (prefers-color-scheme: 'light') { @content; }}
+	@if $media == 'dark-theme' {@media (prefers-color-scheme: 'dark') { @content; }}
 }

@@ -1,0 +1,35 @@
+:root {
+    --main-background-color : #fff;
+    --secondary-background-color : #FAEAD8;
+    --main-background-overlay : rgba(255,255,255,0.2);
+    --main-copy-color : #212121;
+    --secondary-copy-color : #999;
+    --primary-color : ;
+    --secondary-color : ;
+    --primary-link-color : #EB902F;
+    --secondary-link-color : #EEB477;
+    --love-color : #e74c3c;
+    --container-padding : 20px;
+    --theme-toggle-main-color : #EB902F;
+    --theme-toggle-secondary-color : #EEB477;
+    --theme-toggle-bulb-light : 1;
+    --base-font-size : 18px;
+
+    &[data-theme="dark"] {
+        --main-background-color : #212121;
+        --secondary-background-color : #333;
+        --main-background-overlay : rgba(0,0,0,0.6);
+        --main-copy-color : #eee;
+        --primary-link-color : #E9C59F;
+        --secondary-link-color : #ECA55A;
+        --theme-toggle-main-color : #999;
+        --theme-toggle-bulb-light : 0;
+    }
+
+    @include media('tabletUpwards') {
+        --container-padding : 40px;
+        --base-font-size : 16px;
+    }
+
+}
+
