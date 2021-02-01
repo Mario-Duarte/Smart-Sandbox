@@ -2,6 +2,8 @@
 # V3 is here! 
 Smart way of organizing your sandbox/root folder with dynamic search capabilities so no matter how big or how small your sandbox/root folder gets, you can easily find your projects.
 
+<a href="https://www.buymeacoffee.com/marioduarte"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a Coffee&emoji=&slug=marioduarte&button_colour=FF5F5F&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00"></a><br/>
+
 ## About
 This came to mind when I realized how often I would just forget the name or simply had to many folders on my sandbox environment, this is a local site where i just mess around for creating quick prototypes and ideas.
 
